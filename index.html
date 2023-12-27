@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter</title>
+  <style>
+    * {
+      font-family: Georgia;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+    #jsonOutput {
+      white-space: pre-wrap;
+    }
+  </style>
+  <script>
+    function formatJSON() {
+      let inputJson = document.getElementById('jsonInput').value;
+      var outputJsonTextarea = document.getElementById('jsonOutput');
+      try {
+        let indValue = getSelectedIndentation();
+        let parsedJson = JSON.parse(inputJson);
+        let formattedJson = JSON.stringify(parsedJson, null, indValue);
+        outputJsonTextarea.value = formattedJson;
+      } catch (error) {
+        alert('Invalid JSON :(');
+      }
+    }
+    function getSelectedIndentation() {
+      var select = document.getElementById('indSelector');
+      return parseInt(select.options[select.selectedIndex].value, 10);
+    }
+  </script>
+</head>
+
+<body>
+  <h3 style="font-weight: bold;">JSON Formatter</h3>
+  <hr>
+  <p>
+    Throw in your messy JSON and get it tidied in a snap.
+  </p>
+  <div style="height: 100%; display: flex; justify-content: space-between; flex-direction: column;">
+    <label for="jsonInput" style="font-size: 14px; font-weight: bold; margin-top: 10px;">Messy JSON:</label>
+    <textarea id="jsonInput" style="height: 120px; resize: none; margin-top: 20px; margin-bottom: 20px; font-family: Consolas;"></textarea>
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+      <label for="indSelector">Select indentation: </label>
+      <select name="indValue" id="indSelector" style="width: 50px; margin-top: 1%;">
+        <option value="2">2</option>
+        <option value="4">4</option>
+      </select>
+      <button onclick="formatJSON()" style="width: fit-content; margin-top: 10px;">Format</button>
+    </div>  
+    <label for="jsonOutput" style="margin-top: 10px; font-size: 14px; font-weight: bold;">Beautified JSON:</label>
+    <textarea id="jsonOutput" style="height: 120px; resize: none; margin-top: 20px; margin-bottom: 20px; font-family: Consolas;"></textarea>
+  </div>
+  <div style="text-align: center; margin-top: 20px; font-size: 14px;">
+    <p>&copy; 2023 Chris Harry K. All rights reserved.</p>
+  </div>
+</body>
+
+</html>
