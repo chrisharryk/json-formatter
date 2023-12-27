@@ -4,7 +4,7 @@ Format messy JSON data easily with this simple web application.
 
 ## Usage
 
-seriously?
+you seriously need usage instructions?
 
 Try it here: [JSON Formatter](https://chrisharryk.github.io/json-formatter)
 
