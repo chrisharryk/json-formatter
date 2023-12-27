@@ -6,11 +6,11 @@ Format messy JSON data easily with this simple web application.
 
 seriously?
 
-Try it here: [JSON Formatter](https://yourusername.github.io/your-repository)
+Try it here: [JSON Formatter](https://chrisharryk.github.io/your-repository)
 
 ## Author
 
-- [Your Name](https://github.com/yourusername)
+- [Your Name](https://github.com/chrisharryk)
 
 ## License
 
